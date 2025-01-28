@@ -1,0 +1,25 @@
+# home.html
+"""
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <a href="/register">Register</a> | <a href="/login">Login</a>
+</body>
+  <body>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul>
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      <!-- Home page content -->
+  </body>
+</html>
+"""

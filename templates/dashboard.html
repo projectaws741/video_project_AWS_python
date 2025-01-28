@@ -1,0 +1,25 @@
+# dashboard.html
+"""
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ session['username'] }}</h1>
+    <a href="/upload">Upload Video</a> | <a href="/view">View Videos</a> | <a href="/logout">Logout</a>
+</body>
+  <body>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul>
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      <!-- Dashboard content -->
+  </body>
+</html>
+"""

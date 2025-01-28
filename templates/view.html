@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Videos</title>
+    <script src="{{ url_for('static', filename='videoPlayer.js') }}"></script>
+</head>
+<body>
+    <h1>Available Videos</h1>
+    <ul>
+        {% for video in videos %}
+        <li>
+            {{ video }} - 
+            <a href="{{ url_for('stream_video', video_name=video) }}" class="stream-link">Stream</a> | 
+            <a href="/download/{{ video }}">Download</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/dashboard">Back</a>
+
+    <h2>Video Player</h2>
+    <video id="videoPlayer" width="640" height="480" controls>
+        <source id="videoSource" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
