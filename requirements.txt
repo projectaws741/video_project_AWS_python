@@ -3,4 +3,4 @@ Flask-SQLAlchemy==2.5.1
 boto3==1.28.20
 psycopg2-binary==2.9.7
 Werkzeug==2.2.3
-
+SQLAlchemy<2.0
